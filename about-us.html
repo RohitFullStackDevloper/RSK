@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DG Studio | About Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: rgba(10, 10, 10, 0.95);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(139, 69, 255, 0.3);
+    }
+
+    .top-bar .left {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-bar .right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .top-bar .right a {
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(139, 69, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .top-bar .right a:hover {
+      color: #8b45ff;
+      background: rgba(139, 69, 255, 0.2);
+    }
+
+    .top-bar i {
+      color: #8b45ff;
+      margin-right: 5px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(10, 10, 10, 0.98);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar .logo img {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #8b45ff;
+      background: rgba(139, 69, 255, 0.1);
+    }
+
+    .call-now {
+      background: linear-gradient(135deg, #8b45ff, #ff458b);
+      color: #fff !important;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .call-now:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(139, 69, 255, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 60vh;
+      background: linear-gradient(45deg, rgba(139, 69, 255, 0.8), rgba(255, 69, 139, 0.8));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-image: url("../assets/img/wedding-7-min.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    }
+
+    .about-container {
+      display: flex;
+      max-width: 1200px;
+      margin: auto;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      flex: 1;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .about-image:hover img {
+      transform: scale(1.02);
+    }
+
+    .experience-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(10, 10, 10, 0.9);
+      padding: 20px;
+      text-align: center;
+      border-radius: 15px;
+      border: 2px solid rgba(139, 69, 255, 0.3);
+    }
+
+    .experience-badge h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #8b45ff;
+      margin-bottom: 5px;
+    }
+
+    .experience-badge span {
+      color: #ff458b;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .experience-badge p {
+      color: #ccc;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .about-title {
+      color: #8b45ff;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .about-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .about-heading .highlight {
+      color: #8b45ff;
+    }
+
+    .about-text {
+      color: #ccc;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* Founder Section */
+    .founder-section {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    .founder-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .founder-section h2 span {
+      color: #8b45ff;
+    }
+
+    .founder-section p {
+      color: #ccc;
+      max-width: 900px;
+      margin: 20px auto;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    /* Footer */
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      background: #0a0a0a;
+      padding: 60px 30px;
+      border-top: 1px solid rgba(139, 69, 255, 0.3);
+    }
+
+    .footer-section {
+      flex: 1;
+    }
+
+    .footer-logo img {
+      width: 120px;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    .footer-section p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li:hover {
+      color: #8b45ff;
+    }
+
+    .footer-bottom {
+      background: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer-bottom span {
+      color: #8b45ff;
+      font-weight: 600;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-icon {
+      font-size: 28px;
+    }
+
+    /* Enquiry Button */
+    .enquiry-btn {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, #8b45ff, #ff458b);
+      color: #fff;
+      padding: 20px 12px;
+      writing-mode: vertical-rl;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 999;
+      transition: all 0.3s ease;
+      border-radius: 15px 0 0 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .enquiry-btn:hover {
+      transform: translateY(-50%) translateX(-10px);
+      box-shadow: -10px 0 25px rgba(139, 69, 255, 0.5);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: none;
+      }
+
+      .call-now {
+        display: block;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .about-heading {
+        font-size: 2rem;
+      }
+
+      .founder-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+      }
+
+      .footer-logo img {
+        border-radius: 100%;
+      }
+
+      .enquiry-btn {
+        display: none;
+      }
+     .top-bar .left{
+      display: none;
+     }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .about-heading {
+        font-size: 1.7rem;
+      }
+
+      .founder-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .experience-badge {
+        bottom: 15px;
+        left: 15px;
+        padding: 15px;
+      }
+
+      .experience-badge h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Simple animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="left">
+      <span><i class="fas fa-map-marker-alt"></i> Katol, Bharsingi, Maharashtra 441305</span>
+      <span><i class="fas fa-envelope"></i> akashmurodiya@gmail.com</span>
+    </div>
+    <div class="right">
+      <span>Follow Us:</span>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="../assets/img/logo.png" alt="DG Studio Logo">
+    </div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="about-us.html" class="active">ABOUT</a>
+      <a href="#">PROJECTS</a>
+      <a href="#">OUR VIDEOS</a>
+      <a href="contact-us.html">CONTACT</a>
+      <a href="tel:+917620991478" class="call-now">CALL NOW</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+
+      <h1>About Us</h1>
+      <a href="index.html" style="text-decoration: none; color: white;">Home </a>» About Us</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-image fade-in">
+        <img src="../assets/img/akash-img-min.jpg" alt="Akash Murodiya" />
+        <div class="experience-badge">
+          <h2>10<span>+</span></h2>
+          <p>Years Experience</p>
+        </div>
+      </div>
+
+      <div class="about-content fade-in">
+        <h3 class="about-title">About Us</h3>
+        <h1 class="about-heading">
+          We Make Your Every <span class="highlight">Moment</span> Special
+        </h1>
+        <p class="about-text">
+          With over 10 years of experience, Akash Murodiya Photography has become a trusted name in the world of
+          photography, specializing in capturing the most cherished moments of life. Our expertise spans across wedding
+          photography, including pre-wedding shoots, and extends to a wide range of events such as engagement
+          ceremonies, proposal parties, and anniversary celebrations.
+        </p>
+        <p class="about-text">
+          At Akash Murodiya Photography, we also offer professional services for commercial and corporate photography,
+          along with memorable captures for birthdays, baby shoots, and maternity sessions. Every photograph we take
+          reflects our passion for creating timeless memories, with an artistic and personalized approach that speaks to
+          your unique story.
+        </p>
+        <p class="about-text">
+          Whether it's your big wedding day, a special milestone, or a corporate event, Akash Murodiya Photography is here to make
+          every moment last a lifetime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Section -->
+  <section class="founder-section fade-in">
+    <h2>Akash Murodiya – <span>Founder & Photographer</span></h2>
+    <p>
+      I founded Akash Murodiya Photography in 2018 with the goal of capturing the beauty and joy of weddings. Over the
+      past 6 years, I've had the privilege of working as a Director of Photography (DOP) on more than 50 short films
+      and music videos, bringing that cinematic experience to wedding photography and videography. 
+    </p>
+    <p>
+      Together, we focus primarily on Indian weddings, constantly upgrading our skills and equipment to stay at the
+      forefront of the industry. My passion is not only to capture the essence of the wedding day but to create moments
+      that will bring smiles to the couple's faces, even decades later, through a mix of emotional storytelling and
+      lighthearted, fun content.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="../assets/img/logo.png" alt="DG Studio Logo" />
+        </div>
+        <p>
+          With over 10 years of experience, Akash Murodiya Photography has become a trusted name in Nagpur, specializing
+          in capturing the most cherished moments of life.
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul>
+          <li>Wedding Photography</li>
+          <li>Pre-wedding Shoots</li>
+          <li>Corporate Events</li>
+          <li>Commercial Photography</li>
+          <li>Engagement Photography</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> +91 9873293986</li>
+          <li><i class="fas fa-envelope"></i> dgstudioclicks@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> Katol, Bharsingi, Maharashtra 441305</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © Copyright 2025 <span>Akash Murodiya Photography</span> All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Enquiry Button -->
+  <div class="enquiry-btn">Enquiry Now</div>
+
+  <!-- WhatsApp Button -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/917620991478?text=Hi! I'm interested in your photography services. Can you please share more details?"
+      class="whatsapp-btn" title="Chat on WhatsApp">
+      <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+  </div>
+
+  <script>
+    // Simple scroll effects
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+
+      if (window.pageYOffset > 100) {
+        navbar.style.background = 'rgba(10, 10, 10, 0.99)';
+        navbar.style.boxShadow = '0 8px 30px rgba(139, 69, 255, 0.2)';
+      } else {
+        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+      }
+    });
+
+    // Simple fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      fadeElements.forEach(el => observer.observe(el));
+    });
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const links = navLinks.querySelectorAll('a:not(.call-now)');
+
+      links.forEach(link => {
+        link.style.display = link.style.display === 'block' ? 'none' : 'block';
+      });
+    }
+
+    // Add mobile menu button if needed
+    if (window.innerWidth <= 768) {
+      const navbar = document.querySelector('.navbar');
+      const mobileBtn = document.createElement('div');
+      mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      mobileBtn.style.cssText = 'color: #fff; font-size: 1.5rem; cursor: pointer; display: block;';
+      mobileBtn.onclick = toggleMobileMenu;
+      navbar.appendChild(mobileBtn);
+    }
+  </script>
+</body>
+
+</html>
